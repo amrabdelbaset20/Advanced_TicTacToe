@@ -1,0 +1,40 @@
+cmake_minimum_required(VERSION 3.16)
+project(Advanced_TicTacToe)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Qt6 setup
+find_package(Qt6 REQUIRED COMPONENTS Widgets Core Gui)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+
+# SQLite
+find_package(SQLite3 REQUIRED)
+
+# Include directories
+include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${SQLite3_INCLUDE_DIRS}
+)
+
+# Source files
+file(GLOB SOURCES "src/*.cpp")
+file(GLOB HEADERS "include/*.h")
+file(GLOB FORMS "gui/*.ui")
+
+# Create executable
+add_executable(${PROJECT_NAME}
+    ${SOURCES}
+    ${HEADERS}
+    ${FORMS}
+)
+
+# Link libraries
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    Qt6::Widgets
+    Qt6::Core
+    Qt6::Gui
+    ${SQLite3_LIBRARIES}
+)
