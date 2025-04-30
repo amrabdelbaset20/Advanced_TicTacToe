@@ -1,25 +1,16 @@
 {
-    "name": "Advanced Tic Tac Toe",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "ms-vscode.cpptools",
-                "ms-vscode.cmake-tools",
-                "twxs.cmake",
-                "ms-vscode.makefile-tools",
-                "ms-vscode.test-adapter-converter"
-            ],
-            "settings": {
-                "cmake.configureOnOpen": true,
-                "cmake.buildDirectory": "${workspaceFolder}/build"
-            }
-        }
-    },
-    "remoteUser": "vscode",
-    "features": {
-        "ghcr.io/devcontainers/features/github-cli": "latest"
+  "name": "Advanced Tic Tac Toe",
+  "build": { "dockerfile": "Dockerfile" },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools"
+      ],
+      "settings": {
+        "cmake.configureOnOpen": true,
+        "cmake.buildDirectory": "${workspaceFolder}/build"
+      }
     }
+  }
 }
